@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KPI Marketing Strategy Survey</title>
+    <style>
+      /* CSS Styling for the Form */
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f7f6;
+        padding: 20px;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #ffffff;
+        padding: 30px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      h2 {
+        text-align: center;
+        color: #1a73e8;
+        margin-bottom: 30px;
+      }
+      .question-group {
+        margin-bottom: 25px;
+        padding: 15px;
+        border: 1px solid #e0e0e0;
+        border-radius: 6px;
+      }
+      .question-group h3 {
+        margin-top: 0;
+        font-size: 1.1em;
+        color: #333;
+      }
+      .likert-scale {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+      }
+      .likert-option {
+        text-align: center;
+        flex: 1;
+        padding: 5px;
+        font-size: 0.9em;
+      }
+      .likert-option label {
+        display: block;
+        cursor: pointer;
+        padding: 5px;
+        border-radius: 4px;
+      }
+      .likert-option input[type="radio"] {
+        display: none;
+      }
+      .likert-option input[type="radio"]:checked + label {
+        background-color: #e6f0ff;
+        border: 1px solid #1a73e8;
+        color: #1a73e8;
+      }
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        min-height: 100px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        background-color: #1a73e8;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1.1em;
+        margin-top: 20px;
+      }
+      button:hover {
+        background-color: #145cb5;
+      }
+      #results {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #fff3cd;
+        border: 1px solid #ffeeba;
+        border-radius: 5px;
+        display: none; /* Hidden by default */
+      }
+      #rawData {
+        white-space: pre-wrap;
+        font-family: monospace;
+        font-size: 0.9em;
+        background-color: #f8f9fa;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Marketing Strategy KPI Impact Survey (FitFuel Subscriptions)</h2>
+      <p>
+        Please use the scale below to reflect the impact of these metrics on our
+        company's marketing success.
+      </p>
+
+      <form id="kpiSurvey">
+        <div
+          style="
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: bold;
+            color: #555;
+          "
+        >
+          Scale: 1 = Strongly Disagree, 5 = Strongly Agree
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q1. Our conversion optimization efforts (e.g., A/B testing landing
+            pages) have significantly improved campaign ROI. (KPI: Conversion
+            Rate)
+          </h3>
+          <div class="likert-scale">
+            <div class="likert-option">
+              <input
+                type="radio"
+                id="q1_1"
+                name="q1_cr"
+                value="1"
+                required
+              /><label for="q1_1">1</label>
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q1_2" name="q1_cr" value="2" /><label
+                for="q1_2"
+                >2</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q1_3" name="q1_cr" value="3" /><label
+                for="q1_3"
+                >3</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q1_4" name="q1_cr" value="4" /><label
+                for="q1_4"
+                >4</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q1_5" name="q1_cr" value="5" /><label
+                for="q1_5"
+                >5</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q2. The ability to keep CAC below our target has been the primary
+            factor in scaling new marketing channels (e.g., TikTok Ads). (KPI:
+            CAC)
+          </h3>
+          <div class="likert-scale">
+            <div class="likert-option">
+              <input
+                type="radio"
+                id="q2_1"
+                name="q2_cac"
+                value="1"
+                required
+              /><label for="q2_1">1</label>
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q2_2" name="q2_cac" value="2" /><label
+                for="q2_2"
+                >2</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q2_3" name="q2_cac" value="3" /><label
+                for="q2_3"
+                >3</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q2_4" name="q2_cac" value="4" /><label
+                for="q2_4"
+                >4</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q2_5" name="q2_cac" value="5" /><label
+                for="q2_5"
+                >5</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q3. Investments in customer retention (e.g., loyalty programs) have
+            been more profitable than investments in new acquisition. (KPI: LTV)
+          </h3>
+          <div class="likert-scale">
+            <div class="likert-option">
+              <input
+                type="radio"
+                id="q3_1"
+                name="q3_ltv"
+                value="1"
+                required
+              /><label for="q3_1">1</label>
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q3_2" name="q3_ltv" value="2" /><label
+                for="q3_2"
+                >2</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q3_3" name="q3_ltv" value="3" /><label
+                for="q3_3"
+                >3</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q3_4" name="q3_ltv" value="4" /><label
+                for="q3_4"
+                >4</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q3_5" name="q3_ltv" value="5" /><label
+                for="q3_5"
+                >5</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q4. We regularly adjust our bids and spending limits based on the
+            calculated LTV:CAC ratio for each customer segment. (KPI: LTV:CAC
+            Ratio)
+          </h3>
+          <div class="likert-scale">
+            <div class="likert-option">
+              <input
+                type="radio"
+                id="q4_1"
+                name="q4_ratio"
+                value="1"
+                required
+              /><label for="q4_1">1</label>
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q4_2" name="q4_ratio" value="2" /><label
+                for="q4_2"
+                >2</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q4_3" name="q4_ratio" value="3" /><label
+                for="q4_3"
+                >3</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q4_4" name="q4_ratio" value="4" /><label
+                for="q4_4"
+                >4</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q4_5" name="q4_ratio" value="5" /><label
+                for="q4_5"
+                >5</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q5. A favorable LTV:CAC ratio gives us a strong competitive
+            advantage in the subscription box market. (KPI: Overall Success)
+          </h3>
+          <div class="likert-scale">
+            <div class="likert-option">
+              <input
+                type="radio"
+                id="q5_1"
+                name="q5_success"
+                value="1"
+                required
+              /><label for="q5_1">1</label>
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q5_2" name="q5_success" value="2" /><label
+                for="q5_2"
+                >2</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q5_3" name="q5_success" value="3" /><label
+                for="q5_3"
+                >3</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q5_4" name="q5_success" value="4" /><label
+                for="q5_4"
+                >4</label
+              >
+            </div>
+            <div class="likert-option">
+              <input type="radio" id="q5_5" name="q5_success" value="5" /><label
+                for="q5_5"
+                >5</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="question-group">
+          <h3>
+            Q6. Briefly describe a time when a change in one of these metrics
+            (CR, CAC, or LTV) forced a major shift in our marketing strategy.
+            (Qualitative)
+          </h3>
+          <textarea
+            id="q6_qualitative"
+            name="q6_qualitative"
+            placeholder="Enter your response here..."
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit">Submit Survey</button>
+      </form>
+
+      <div id="results">
+        <h3>Raw Data for Appendix</h3>
+        <p>
+          Copy and paste the data below into your appendix. Note that each
+          submission replaces the last one in this simulation.
+        </p>
+        <pre id="rawData"></pre>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript for Form Handling and Data Collection
+      const surveyForm = document.getElementById("kpiSurvey");
+      const rawDataDisplay = document.getElementById("rawData");
+      const resultsContainer = document.getElementById("results");
+      const accessKeyInput = document.getElementById("accessKey");
+
+      // Developer's Key
+      const DEVELOPER_KEY = "tma2025";
+
+      // An array to store all submitted data in the browser's session
+      let allRawData = [];
+
+      // Load data from session storage on page load (to persist across form resets)
+      if (sessionStorage.getItem("surveyData")) {
+        allRawData = JSON.parse(sessionStorage.getItem("surveyData"));
+      }
+
+      // --- Form Submission Handler ---
+      surveyForm.addEventListener("submit", function (event) {
+        event.preventDefault(); // Stop the default form submission
+
+        // 1. Gather Likert Scale Data
+        const q1 =
+          document.querySelector('input[name="q1_cr"]:checked')?.value || "N/A";
+        const q2 =
+          document.querySelector('input[name="q2_cac"]:checked')?.value ||
+          "N/A";
+        const q3 =
+          document.querySelector('input[name="q3_ltv"]:checked')?.value ||
+          "N/A";
+        const q4 =
+          document.querySelector('input[name="q4_ratio"]:checked')?.value ||
+          "N/A";
+        const q5 =
+          document.querySelector('input[name="q5_success"]:checked')?.value ||
+          "N/A";
+
+        // 2. Gather Qualitative Data
+        const q6 = document.getElementById("q6_qualitative").value.trim();
+
+        if (
+          q1 === "N/A" ||
+          q2 === "N/A" ||
+          q3 === "N/A" ||
+          q4 === "N/A" ||
+          q5 === "N/A" ||
+          q6 === ""
+        ) {
+          alert("Please answer all questions before submitting.");
+          return;
+        }
+
+        // 3. Format the new submission data as an object
+        const submissionObject = {
+          id: allRawData.length + 1, // Simple ID for tracking
+          q1,
+          q2,
+          q3,
+          q4,
+          q5,
+          q6,
+        };
+
+        // 4. Store the data
+        allRawData.push(submissionObject);
+        sessionStorage.setItem("surveyData", JSON.stringify(allRawData));
+
+        // 5. Clear the form and hide the results section
+        surveyForm.reset();
+        resultsContainer.style.display = "none";
+        alert("Survey submitted. Thank you for your response!");
+      });
+
+      // --- Developer Access Function ---
+      function generateRawDataTable(dataArray) {
+        if (dataArray.length === 0) {
+          return "No data submitted yet.";
+        }
+
+        // Create the Markdown Table Header
+        let table = `
+    | Respondent ID | Q1 (CR/ROI) | Q2 (CAC/Scale) | Q3 (Retention/Profits) | Q4 (LTV:CAC/Bidding) | Q5 (Ratio/Advantage) | Q6 (Qualitative Insight) |
+    | :---: | :---: | :---: | :---: | :---: | :---: | :--- |`;
+
+        // Add Data Rows
+        dataArray.forEach((data) => {
+          // Escape any markdown pipe characters in the qualitative text
+          const cleanQ6 = data.q6.replace(/\|/g, "-");
+
+          table += `\n| R${data.id} | ${data.q1} | ${data.q2} | ${data.q3} | ${data.q4} | ${data.q5} | ${cleanQ6} |`;
+        });
+
+        return table;
+      }
+
+      function attemptAccess() {
+        const key = prompt(
+          "⚠️ Developer Access Required: Enter the access key to view raw data."
+        );
+        if (key === DEVELOPER_KEY) {
+          rawDataDisplay.textContent = generateRawDataTable(allRawData);
+          resultsContainer.style.display = "block";
+          alert("Access granted. Scroll down to view the full raw data table.");
+        } else if (key !== null) {
+          alert("Access Denied. Incorrect key.");
+        }
+      }
+
+      // Attach the access function to a new button (or we can prompt immediately on load, but a button is better)
+      document.addEventListener("DOMContentLoaded", () => {
+        const accessButton = document.createElement("button");
+        accessButton.textContent = "🔓 Developer: View Raw Data";
+        accessButton.type = "button";
+        accessButton.style.marginTop = "10px";
+        accessButton.style.backgroundColor = "#ffc107";
+        accessButton.style.color = "#333";
+        accessButton.style.border = "none";
+        accessButton.addEventListener("click", attemptAccess);
+
+        // Insert the new button after the submit button
+        surveyForm.parentNode.insertBefore(accessButton, resultsContainer);
+
+        // Hide the original results container by default (CSS already handles this, but good practice)
+        resultsContainer.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
